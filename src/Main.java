@@ -5,6 +5,5 @@ public class Main {
             st = new Astack<>();
             st.push(5);
             System.out.println(st.size());
-        }
     }
 }

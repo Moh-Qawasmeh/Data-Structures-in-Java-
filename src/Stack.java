@@ -12,4 +12,5 @@ public interface Stack<T> extends Iterable<T> {
     public boolean isFull();
 
     public void clear();
+
 }

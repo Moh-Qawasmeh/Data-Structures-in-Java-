@@ -15,16 +15,21 @@ public class Astack<T> implements Stack<T> {
     }
 
     public void resize(boolean inc){
-
+        if(inc == true){
+            size = Math.min(size *2, MAXIMUM);
+        }
+        else size /= 2;
+        arr = Arrays.copyOf(arr, size);
     }
 
+    @Override
     public void push(T item){
          if(current == size - 1){
              resize(true);
          }
          arr[current++] = item;
     }
-    // add a new item to the top
+    @Override
     public void pop(){
         if(!isEmpty()) {
             arr[current] = null;
@@ -34,32 +39,32 @@ public class Astack<T> implements Stack<T> {
             }
         }
     }
-    // remove the item located at the top and return it
+    @Override
     public int size(){
        return current;
     }
-
+    @Override
     public boolean isEmpty(){
         return current == 0;
     }
-
+    @Override
     public T top(){
         return arr[current];
     }
-
+    @Override
     public boolean isFull(){
         return current + 1 == MAXIMUM;
     }
-
+    @Override
     public void clear(){
        for(int i = 0; i < size; i++ ){
            arr[i] = null;
        }
        current = 0;
     }
-
     @Override
     public Iterator<T> iterator() {
         return null;
     }
+
 }
