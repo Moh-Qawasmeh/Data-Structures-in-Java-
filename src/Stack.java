@@ -1,4 +1,5 @@
 public interface Stack<T> extends Iterable<T> {
+
     public void push(T item);
 
     public void pop();
